@@ -1,5 +1,48 @@
 {
   "version": "7",
   "dialect": "mysql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1770897038058,
+      "tag": "0000_grey_manta",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1770897186206,
+      "tag": "0001_reflective_groot",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1770901694977,
+      "tag": "0002_dashing_slipstream",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1770904239524,
+      "tag": "0003_shiny_brother_voodoo",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1770924277873,
+      "tag": "0004_past_solo",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1770933170674,
+      "tag": "0005_perfect_captain_britain",
+      "breakpoints": true
+    }
+  ]
 }

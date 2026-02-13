@@ -1,0 +1,20 @@
+CREATE TABLE `client_users` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`email` varchar(320) NOT NULL,
+	`passwordHash` varchar(255) NOT NULL,
+	`firstName` varchar(100) NOT NULL,
+	`lastName` varchar(100) NOT NULL,
+	`phone` varchar(20),
+	`avatar` varchar(1000),
+	`clientRole` enum('guest','owner') NOT NULL DEFAULT 'guest',
+	`company` varchar(255),
+	`bio` text,
+	`preferredLanguage` varchar(5) DEFAULT 'ar',
+	`isActive` boolean NOT NULL DEFAULT true,
+	`emailVerified` boolean NOT NULL DEFAULT false,
+	`lastLogin` timestamp,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `client_users_id` PRIMARY KEY(`id`),
+	CONSTRAINT `client_users_email_unique` UNIQUE(`email`)
+);
