@@ -77,7 +77,7 @@ export default function Booking() {
                   {property && (
                     <div className="p-4 bg-[#0B1E2D] rounded-xl text-white mb-4">
                       <h3 className="font-semibold">{isArabic ? property.titleAr : property.titleEn}</h3>
-                      <p className="text-sm text-white/60 mt-1">{t("common.sar")} {String(property.priceLow || 0)} / {isArabic ? "ليلة" : "night"}</p>
+                      <p className="text-sm text-white/60 mt-1">{t("common.sar")} {String(property.priceNightly || property.priceLow || 0)} {t("pricing.per_night")}</p>
                     </div>
                   )}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

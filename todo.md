@@ -146,3 +146,13 @@
 - [x] Update/insert all 10 blog posts in database with full content, excerpts, SEO metadata, and featured images
 - [x] Verify all 10 blog posts display correctly on website with images and full content
 - [x] All 69 tests still passing after blog updates
+
+## Property Listing Page Fixes (User Request)
+- [x] FIX 1: Show single nightly price ("ابتداءً من X ر.س / الليلة") instead of seasonal breakdown
+- [x] FIX 2: Arabic amenity translations — all amenities must display in Arabic when language is Arabic
+- [x] FIX 3: Fix red "error 1" banner at bottom of property listing page (was DB query error before migration)
+- [x] FIX 4a: Ensure property text (title, description, location, amenities) is fully CMS-managed in AR/EN
+- [x] FIX 4b: Ensure property photos are uploadable, reorderable, and deletable from admin panel
+- [x] FIX 4c: Ensure admin can set/update nightly rate per property from backend (priceNightly field added)
+- [x] FIX 4d: Ensure admin can toggle amenities on/off per property from checklist in backend
+- [x] FIX 4e: Migrate any hardcoded frontend content to be backend-managed

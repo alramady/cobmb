@@ -135,6 +135,7 @@ function PropertyDialog({ isArabic, property, onClose, onSuccess }: {
     propertyType: property?.propertyType || "2br",
     bedrooms: property?.bedrooms?.toString() || "2", bathrooms: property?.bathrooms?.toString() || "1",
     maxGuests: property?.maxGuests?.toString() || "4", sizeSqm: property?.sizeSqm || "",
+    priceNightly: property?.priceNightly || "",
     pricePeak: property?.pricePeak || "", priceHigh: property?.priceHigh || "", priceLow: property?.priceLow || "",
     status: property?.status || "draft",
     isFeatured: property?.isFeatured || false,
@@ -167,6 +168,7 @@ function PropertyDialog({ isArabic, property, onClose, onSuccess }: {
       propertyType: form.propertyType as any,
       bedrooms: parseInt(form.bedrooms) || undefined, bathrooms: parseInt(form.bathrooms) || undefined,
       maxGuests: parseInt(form.maxGuests) || undefined, sizeSqm: form.sizeSqm || undefined,
+      priceNightly: form.priceNightly || undefined,
       pricePeak: form.pricePeak || undefined, priceHigh: form.priceHigh || undefined, priceLow: form.priceLow || undefined,
       images: JSON.stringify(images),
       amenities: JSON.stringify(amenities),
@@ -232,10 +234,22 @@ function PropertyDialog({ isArabic, property, onClose, onSuccess }: {
             <div><Label>Max Guests</Label><Input type="number" value={form.maxGuests} onChange={(e) => setForm({ ...form, maxGuests: e.target.value })} /></div>
             <div><Label>Size (sqm)</Label><Input value={form.sizeSqm} onChange={(e) => setForm({ ...form, sizeSqm: e.target.value })} placeholder="e.g. 120" /></div>
           </div>
-          <div className="grid grid-cols-3 gap-4">
-            <div><Label>Price Peak (SAR)</Label><Input value={form.pricePeak} onChange={(e) => setForm({ ...form, pricePeak: e.target.value })} /></div>
-            <div><Label>Price High (SAR)</Label><Input value={form.priceHigh} onChange={(e) => setForm({ ...form, priceHigh: e.target.value })} /></div>
-            <div><Label>Price Low (SAR)</Label><Input value={form.priceLow} onChange={(e) => setForm({ ...form, priceLow: e.target.value })} /></div>
+          {/* Nightly Rate - shown to guests */}
+          <div>
+            <Label className="text-sm font-semibold mb-2 block">{isArabic ? "السعر الليلي (يظهر للضيوف)" : "Nightly Rate (Shown to Guests)"}</Label>
+            <div className="max-w-xs">
+              <Input value={form.priceNightly} onChange={(e) => setForm({ ...form, priceNightly: e.target.value })} placeholder={isArabic ? "مثال: 500" : "e.g. 500"} className="text-lg font-semibold" />
+              <p className="text-xs text-muted-foreground mt-1">{isArabic ? "هذا السعر يظهر في صفحة العقار كـ 'ابتداءً من X ر.س / الليلة'" : "This price is displayed on the property page as 'Starting from X SAR / night'"}</p>
+            </div>
+          </div>
+          {/* Internal Seasonal Pricing - not shown to guests */}
+          <div>
+            <Label className="text-sm font-semibold mb-2 block text-slate-400">{isArabic ? "أسعار الموسم (داخلي فقط - لا يظهر للضيوف)" : "Seasonal Pricing (Internal Only - Not Shown to Guests)"}</Label>
+            <div className="grid grid-cols-3 gap-4 opacity-70">
+              <div><Label className="text-xs text-slate-400">Peak (SAR)</Label><Input value={form.pricePeak} onChange={(e) => setForm({ ...form, pricePeak: e.target.value })} className="border-dashed" /></div>
+              <div><Label className="text-xs text-slate-400">High (SAR)</Label><Input value={form.priceHigh} onChange={(e) => setForm({ ...form, priceHigh: e.target.value })} className="border-dashed" /></div>
+              <div><Label className="text-xs text-slate-400">Low (SAR)</Label><Input value={form.priceLow} onChange={(e) => setForm({ ...form, priceLow: e.target.value })} className="border-dashed" /></div>
+            </div>
           </div>
 
           {/* Amenities Editor */}

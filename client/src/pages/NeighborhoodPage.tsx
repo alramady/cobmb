@@ -170,8 +170,8 @@ export default function NeighborhoodPage() {
                           <span className="flex items-center gap-1"><Bath className="h-3 w-3" /> {String(property.bathrooms ?? 0)}</span>
                           <span className="flex items-center gap-1"><Users className="h-3 w-3" /> {String(property.maxGuests ?? 0)}</span>
                         </div>
-                        <span className="text-lg font-bold text-[#3ECFC0]">{t("common.sar")} {String(property.priceLow || 0)}</span>
-                        <span className="text-xs text-muted-foreground ms-1">/ {isArabic ? "ليلة" : "night"}</span>
+                        <span className="text-lg font-bold text-[#3ECFC0]">{t("common.sar")} {String(property.priceNightly || property.priceLow || 0)}</span>
+                        <span className="text-xs text-muted-foreground ms-1">{t("pricing.per_night")}</span>
                       </CardContent>
                     </Card>
                   </Link>

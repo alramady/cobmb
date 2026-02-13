@@ -43,6 +43,13 @@
       "when": 1770933170674,
       "tag": "0005_perfect_captain_britain",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1770956133128,
+      "tag": "0006_smooth_valkyrie",
+      "breakpoints": true
     }
   ]
 }

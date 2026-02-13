@@ -1,0 +1,1 @@
+ALTER TABLE `properties` ADD `priceNightly` decimal(10,2);

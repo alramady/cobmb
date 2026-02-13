@@ -17,10 +17,18 @@ export default function PropertyDetail() {
   const [currentImage, setCurrentImage] = useState(0);
   const Arrow = isArabic ? ArrowRight : ArrowLeft;
 
-  const { data: property, isLoading } = trpc.properties.getById.useQuery({ id: Number(id) });
+  const { data: property, isLoading, error } = trpc.properties.getById.useQuery({ id: Number(id) });
   const addFav = trpc.account.addFavorite.useMutation({
     onSuccess: () => toast.success(isArabic ? "تمت الإضافة للمفضلة" : "Added to favorites"),
   });
+
+  // Helper to translate amenity names
+  const translateAmenity = (amenity: string): string => {
+    const key = `amenity.${amenity}`;
+    const translated = t(key);
+    // If translation returns the key itself, it means no translation found — return original
+    return translated === key ? amenity : translated;
+  };
 
   if (isLoading) {
     return (
@@ -32,7 +40,7 @@ export default function PropertyDetail() {
     );
   }
 
-  if (!property) {
+  if (error || !property) {
     return (
       <PageLayout>
         <div className="py-20 text-center">
@@ -45,6 +53,9 @@ export default function PropertyDetail() {
 
   const imgs = (property.images as string[] | null) || [];
   const amenities = (property.amenities as string[] | null) || [];
+
+  // Determine the display price: priceNightly > priceLow > priceHigh > pricePeak
+  const displayPrice = property.priceNightly || property.priceLow || property.priceHigh || property.pricePeak;
 
   return (
     <PageLayout>
@@ -136,7 +147,7 @@ export default function PropertyDetail() {
                     {amenities.map((amenity, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-[#3ECFC0] shrink-0" />
-                        <span>{String(amenity)}</span>
+                        <span>{translateAmenity(String(amenity))}</span>
                       </div>
                     ))}
                   </div>
@@ -148,27 +159,20 @@ export default function PropertyDetail() {
             <div>
               <Card className="sticky top-24 border-0 shadow-lg">
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-[#0B1E2D] mb-4">{isArabic ? "الأسعار" : "Pricing"}</h3>
-                  <div className="space-y-3 mb-6">
-                    {property.pricePeak && (
-                      <div className="flex justify-between items-center py-2 border-b">
-                        <span className="text-sm text-muted-foreground">{t("pricing.peak")}</span>
-                        <span className="font-semibold">{t("common.sar")} {property.pricePeak}</span>
+                  {/* Single Nightly Price Display */}
+                  {displayPrice ? (
+                    <div className="text-center mb-6">
+                      <p className="text-sm text-muted-foreground mb-1">{t("pricing.starting_from")}</p>
+                      <div className="flex items-baseline justify-center gap-1">
+                        <span className="text-3xl font-bold text-[#0B1E2D]">{t("common.sar")} {Number(displayPrice).toLocaleString()}</span>
+                        <span className="text-sm text-muted-foreground">{t("pricing.per_night")}</span>
                       </div>
-                    )}
-                    {property.priceHigh && (
-                      <div className="flex justify-between items-center py-2 border-b">
-                        <span className="text-sm text-muted-foreground">{t("pricing.high")}</span>
-                        <span className="font-semibold">{t("common.sar")} {property.priceHigh}</span>
-                      </div>
-                    )}
-                    {property.priceLow && (
-                      <div className="flex justify-between items-center py-2 border-b">
-                        <span className="text-sm text-muted-foreground">{t("pricing.low")}</span>
-                        <span className="font-semibold">{t("common.sar")} {property.priceLow}</span>
-                      </div>
-                    )}
-                  </div>
+                    </div>
+                  ) : (
+                    <div className="text-center mb-6">
+                      <p className="text-sm text-muted-foreground">{t("pricing.contact")}</p>
+                    </div>
+                  )}
                   <Link href={`/booking?property=${property.id}`}>
                     <Button className="w-full bg-[#3ECFC0] text-[#0B1E2D] hover:bg-[#B8F0E8] font-semibold py-6">
                       {t("properties.book_now")}

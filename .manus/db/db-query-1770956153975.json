@@ -1,0 +1,50 @@
+{
+  "query": "SELECT id, titleEn, priceNightly, pricePeak, priceHigh, priceLow FROM properties LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3yaEUUPpH7u5Dce.efd58de741c2 --database HnggZh7Tkx5XSKzVAZsL9i --execute SELECT id, titleEn, priceNightly, pricePeak, priceHigh, priceLow FROM properties LIMIT 5;",
+  "rows": [
+    {
+      "id": "1",
+      "titleEn": "Luxury Studio in Al Olaya",
+      "priceNightly": "400.00",
+      "pricePeak": "800.00",
+      "priceHigh": "600.00",
+      "priceLow": "400.00"
+    },
+    {
+      "id": "2",
+      "titleEn": "Modern 1BR Apartment - Kingdom Tower View",
+      "priceNightly": "600.00",
+      "pricePeak": "1200.00",
+      "priceHigh": "900.00",
+      "priceLow": "600.00"
+    },
+    {
+      "id": "3",
+      "titleEn": "Spacious 2BR Family Apartment",
+      "priceNightly": "750.00",
+      "pricePeak": "1500.00",
+      "priceHigh": "1100.00",
+      "priceLow": "750.00"
+    },
+    {
+      "id": "4",
+      "titleEn": "Premium 3BR Villa with Pool",
+      "priceNightly": "1200.00",
+      "pricePeak": "2500.00",
+      "priceHigh": "1800.00",
+      "priceLow": "1200.00"
+    },
+    {
+      "id": "5",
+      "titleEn": "Executive Suite - Business District",
+      "priceNightly": "500.00",
+      "pricePeak": "1000.00",
+      "priceHigh": "750.00",
+      "priceLow": "500.00"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitleEn\tpriceNightly\tpricePeak\tpriceHigh\tpriceLow\n1\tLuxury Studio in Al Olaya\t400.00\t800.00\t600.00\t400.00\n2\tModern 1BR Apartment - Kingdom Tower View\t600.00\t1200.00\t900.00\t600.00\n3\tSpacious 2BR Family Apartment\t750.00\t1500.00\t1100.00\t750.00\n4\tPremium 3BR Villa with Pool\t1200.00\t2500.00\t1800.00\t1200.00\n5\tExecutive Suite - Business District\t500.00\t1000.00\t750.00\t500.00\n",
+  "stderr": "",
+  "execution_time_ms": 1728
+}

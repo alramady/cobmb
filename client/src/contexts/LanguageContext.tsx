@@ -178,11 +178,41 @@ const translations: Record<string, Record<Language, string>> = {
   "account.logout": { ar: "تسجيل الخروج", en: "Logout" },
   "account.settings": { ar: "الإعدادات", en: "Settings" },
 
-  // Pricing seasons
+  // Pricing
+  "pricing.starting_from": { ar: "ابتداءً من", en: "Starting from" },
+  "pricing.per_night": { ar: "/ الليلة", en: "/ night" },
   "pricing.peak": { ar: "موسم الذروة", en: "Peak Season" },
   "pricing.high": { ar: "موسم مرتفع", en: "High Season" },
   "pricing.low": { ar: "موسم منخفض", en: "Low Season" },
   "pricing.contact": { ar: "تواصل للأسعار", en: "Contact for pricing" },
+
+  // Amenities
+  "amenity.WiFi": { ar: "واي فاي", en: "WiFi" },
+  "amenity.Parking": { ar: "موقف سيارات", en: "Parking" },
+  "amenity.Pool": { ar: "مسبح", en: "Pool" },
+  "amenity.Gym": { ar: "صالة رياضية", en: "Gym" },
+  "amenity.Kitchen": { ar: "مطبخ", en: "Kitchen" },
+  "amenity.Washer": { ar: "غسالة", en: "Washer" },
+  "amenity.Dryer": { ar: "مجفف", en: "Dryer" },
+  "amenity.AC": { ar: "مكيف", en: "AC" },
+  "amenity.TV": { ar: "تلفاز", en: "TV" },
+  "amenity.Workspace": { ar: "مساحة عمل", en: "Workspace" },
+  "amenity.Balcony": { ar: "شرفة", en: "Balcony" },
+  "amenity.Elevator": { ar: "مصعد", en: "Elevator" },
+  "amenity.Security": { ar: "أمن", en: "Security" },
+  "amenity.Garden": { ar: "حديقة", en: "Garden" },
+  "amenity.BBQ Area": { ar: "منطقة شواء", en: "BBQ Area" },
+  "amenity.Kids Play Area": { ar: "منطقة ألعاب أطفال", en: "Kids Play Area" },
+  "amenity.Maid Room": { ar: "غرفة خادمة", en: "Maid Room" },
+  "amenity.Storage": { ar: "مخزن", en: "Storage" },
+  "amenity.Smart Home": { ar: "منزل ذكي", en: "Smart Home" },
+  "amenity.Concierge": { ar: "خدمة الكونسيرج", en: "Concierge" },
+  "amenity.Room Service": { ar: "خدمة الغرف", en: "Room Service" },
+  "amenity.Spa": { ar: "سبا", en: "Spa" },
+  "amenity.Sauna": { ar: "ساونا", en: "Sauna" },
+  "amenity.Jacuzzi": { ar: "جاكوزي", en: "Jacuzzi" },
+  "amenity.Iron": { ar: "مكواة", en: "Iron" },
+  "amenity.CCTV": { ar: "كاميرات مراقبة", en: "CCTV" },
 };
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {

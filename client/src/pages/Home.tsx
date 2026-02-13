@@ -273,8 +273,8 @@ export default function Home() {
                       </div>
                       <div className="flex items-center justify-between">
                         <div>
-                          <span className="text-xl font-bold text-[#3ECFC0]">{t("common.sar")} {String(property.priceLow || 0)}</span>
-                          <span className="text-xs text-muted-foreground ms-1">/ {isArabic ? "ليلة" : "night"}</span>
+                          <span className="text-xl font-bold text-[#3ECFC0]">{t("common.sar")} {String(property.priceNightly || property.priceLow || 0)}</span>
+                          <span className="text-xs text-muted-foreground ms-1">{t("pricing.per_night")}</span>
                         </div>
                       </div>
                     </CardContent>

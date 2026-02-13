@@ -85,6 +85,7 @@ export const properties = mysqlTable("properties", {
   bathrooms: int("bathrooms").default(1),
   maxGuests: int("maxGuests").default(2),
   sizeSqm: decimal("sizeSqm", { precision: 10, scale: 2 }),
+  priceNightly: decimal("priceNightly", { precision: 10, scale: 2 }),
   pricePeak: decimal("pricePeak", { precision: 10, scale: 2 }),
   priceHigh: decimal("priceHigh", { precision: 10, scale: 2 }),
   priceLow: decimal("priceLow", { precision: 10, scale: 2 }),
