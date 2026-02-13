@@ -62,8 +62,8 @@ export default function AdminPanel() {
         <div className="p-4 border-b border-white/10">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <CoBnBLogo size="sm" />
-              <div><h1 className="font-bold text-sm">CoBnB KSA</h1><p className="text-[10px] text-white/50">Admin Panel</p></div>
+              <CoBnBLogo size="sm" variant="light" />
+              <div><p className="text-[10px] text-white/50">Admin Panel</p></div>
             </div>
             <button className="lg:hidden text-white/60 hover:text-white" onClick={() => setSidebarOpen(false)}><X className="h-5 w-5" /></button>
           </div>

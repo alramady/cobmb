@@ -14,14 +14,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/UgKLnLwgwckVFtlg.png"
-                alt="CoBnB Logo"
-                className="h-12 w-auto object-contain"
+              <CoBnBLogo
+                size="lg"
+                variant="light"
+                tagline={isArabic ? "خبير الإيجار القصير" : "THE BNB EXPERT"}
               />
-              <span className="block text-[#3ECFC0] text-xs font-medium tracking-wider uppercase mt-1">
-                {isArabic ? "خبير الإيجار القصير" : "THE BNB EXPERT"}
-              </span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               {isArabic

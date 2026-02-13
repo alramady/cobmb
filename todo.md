@@ -156,3 +156,9 @@
 - [x] FIX 4c: Ensure admin can set/update nightly rate per property from backend (priceNightly field added)
 - [x] FIX 4d: Ensure admin can toggle amenities on/off per property from checklist in backend
 - [x] FIX 4e: Migrate any hardcoded frontend content to be backend-managed
+
+## Logo Improvement
+- [x] Improve logo display — show logo with text, make it look more polished and professional across all pages
+- [x] SVG building icon with teal border + "COBNB" text + tagline in all sizes (sm/md/lg)
+- [x] Consistent logo across navbar, footer, admin panel, login/signup pages
+- [x] Light/dark variant support for different backgrounds
