@@ -1,0 +1,82 @@
+{
+  "query": "SELECT id, titleAr, JSON_LENGTH(images) as img_count, SUBSTRING(JSON_EXTRACT(images, '$[0]'), 1, 80) as first_img FROM properties ORDER BY id",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3yaEUUPpH7u5Dce.efd58de741c2 --database HnggZh7Tkx5XSKzVAZsL9i --execute SELECT id, titleAr, JSON_LENGTH(images) as img_count, SUBSTRING(JSON_EXTRACT(images, '$[0]'), 1, 80) as first_img FROM properties ORDER BY id",
+  "rows": [
+    {
+      "id": "1",
+      "titleAr": "استوديو فاخر في العليا",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "2",
+      "titleAr": "شقة غرفة واحدة حديثة - إطلالة برج المملكة",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "3",
+      "titleAr": "شقة عائلية واسعة غرفتين",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "4",
+      "titleAr": "فيلا 3 غرف متميزة مع مسبح",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "5",
+      "titleAr": "جناح تنفيذي - الحي المالي",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "6",
+      "titleAr": "شقة مريحة غرفة واحدة قرب الكورنيش",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "7",
+      "titleAr": "شقة غرفتين على الشاطئ",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "8",
+      "titleAr": "لوفت تاريخي في البلد",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "9",
+      "titleAr": "جناح الحاج قرب المسجد النبوي",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "10",
+      "titleAr": "فيلا عائلية في قباء",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "11",
+      "titleAr": "شقة فاخرة غرفتين قرب كافد",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    },
+    {
+      "id": "12",
+      "titleAr": "استوديو ساحر في النخيل",
+      "img_count": "4",
+      "first_img": "\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitleAr\timg_count\tfirst_img\n1\tاستوديو فاخر في العليا\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n2\tشقة غرفة واحدة حديثة - إطلالة برج المملكة\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n3\tشقة عائلية واسعة غرفتين\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n4\tفيلا 3 غرف متميزة مع مسبح\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n5\tجناح تنفيذي - الحي المالي\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n6\tشقة مريحة غرفة واحدة قرب الكورنيش\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n7\tشقة غرفتين على الشاطئ\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n8\tلوفت تاريخي في البلد\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n9\tجناح الحاج قرب المسجد النبوي\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n10\tفيلا عائلية في قباء\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n11\tشقة فاخرة غرفتين قرب كافد\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n12\tاستوديو ساحر في النخيل\t4\t\"https://files.manuscdn.com/user_upload_by_module/session_file/31051966333113277\n",
+  "stderr": "",
+  "execution_time_ms": 1547
+}

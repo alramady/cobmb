@@ -1,0 +1,22 @@
+{
+  "query": "SELECT settingKey, settingValue FROM settings WHERE settingKey IN ('site_phone', 'site_email', 'site_whatsapp')",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3yaEUUPpH7u5Dce.efd58de741c2 --database HnggZh7Tkx5XSKzVAZsL9i --execute SELECT settingKey, settingValue FROM settings WHERE settingKey IN ('site_phone', 'site_email', 'site_whatsapp')",
+  "rows": [
+    {
+      "settingKey": "site_phone",
+      "settingValue": "+966504466528"
+    },
+    {
+      "settingKey": "site_email",
+      "settingValue": "info@cobnb.sa"
+    },
+    {
+      "settingKey": "site_whatsapp",
+      "settingValue": "+966504466528"
+    }
+  ],
+  "messages": [],
+  "stdout": "settingKey\tsettingValue\nsite_phone\t+966504466528\nsite_email\tinfo@cobnb.sa\nsite_whatsapp\t+966504466528\n",
+  "stderr": "",
+  "execution_time_ms": 1538
+}

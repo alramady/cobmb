@@ -1,11 +1,13 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
+import SEO from "@/components/SEO";
 
 export default function Terms() {
   const { isArabic } = useLanguage();
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "الشروط والأحكام" : "Terms & Conditions"} description={isArabic ? "الشروط والأحكام لموقع كوبي إن بي" : "CoBnB KSA Terms and Conditions"} url="/terms" />
       <section className="py-16 bg-[#0B1E2D]">
         <div className="container"><h1 className="text-4xl font-bold text-white">{isArabic ? "الشروط والأحكام" : "Terms & Conditions"}</h1></div>
       </section>

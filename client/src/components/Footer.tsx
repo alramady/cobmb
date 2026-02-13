@@ -89,7 +89,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 text-[#3ECFC0] mt-0.5 shrink-0" />
-                <span className="text-white/60 text-sm">info@cobnb.sa</span>
+                <a href="mailto:info@cobnb.sa" className="text-white/60 hover:text-[#3ECFC0] text-sm transition-colors">info@cobnb.sa</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-[#3ECFC0] mt-0.5 shrink-0" />

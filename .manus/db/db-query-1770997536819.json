@@ -1,0 +1,40 @@
+{
+  "query": "SELECT id, titleEn, LEFT(CAST(images AS CHAR), 200) as imgs FROM properties WHERE id IN (1,2,3,4,5,6)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3yaEUUPpH7u5Dce.efd58de741c2 --database HnggZh7Tkx5XSKzVAZsL9i --execute SELECT id, titleEn, LEFT(CAST(images AS CHAR), 200) as imgs FROM properties WHERE id IN (1,2,3,4,5,6)",
+  "rows": [
+    {
+      "id": "1",
+      "titleEn": "Luxury Studio in Al Olaya",
+      "imgs": "[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/MXzsRUcCVybTjNKx.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/MhPLWiLaFKMx"
+    },
+    {
+      "id": "2",
+      "titleEn": "Modern 1BR Apartment - Kingdom Tower View",
+      "imgs": "[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/ZSwWDmlrIZgGkKTK.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/OPYWopDAdXld"
+    },
+    {
+      "id": "3",
+      "titleEn": "Spacious 2BR Family Apartment",
+      "imgs": "[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/ntvdgASFScNKSdGU.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/dgbCUkdAcVuL"
+    },
+    {
+      "id": "4",
+      "titleEn": "Premium 3BR Villa with Pool",
+      "imgs": "[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/OCcfaGlMbpeverPi.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/THVcUFZvaqJG"
+    },
+    {
+      "id": "5",
+      "titleEn": "Executive Suite - Business District",
+      "imgs": "[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/qtQwrtfKoIqgJkcH.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/QixcAYduCege"
+    },
+    {
+      "id": "6",
+      "titleEn": "Cozy 1BR near Corniche",
+      "imgs": "[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/RcoQfabmhuMYCTWm.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/cumRFkPiulpN"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitleEn\timgs\n1\tLuxury Studio in Al Olaya\t[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/MXzsRUcCVybTjNKx.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/MhPLWiLaFKMx\n2\tModern 1BR Apartment - Kingdom Tower View\t[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/ZSwWDmlrIZgGkKTK.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/OPYWopDAdXld\n3\tSpacious 2BR Family Apartment\t[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/ntvdgASFScNKSdGU.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/dgbCUkdAcVuL\n4\tPremium 3BR Villa with Pool\t[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/OCcfaGlMbpeverPi.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/THVcUFZvaqJG\n5\tExecutive Suite - Business District\t[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/qtQwrtfKoIqgJkcH.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/QixcAYduCege\n6\tCozy 1BR near Corniche\t[\"https://files.manuscdn.com/user_upload_by_module/session_file/310519663331132774/RcoQfabmhuMYCTWm.png\", \"https://files.manuscdn.com/user_upload_by_module/session_file/310519663296955420/cumRFkPiulpN\n",
+  "stderr": "",
+  "execution_time_ms": 1491
+}

@@ -312,7 +312,7 @@ export default function CoBnBPlus() {
                 : "Join the CoBnB+ program and transform your property into a premium income source. We handle everything from design and furnishing to guest management and maintenance."}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/for-owners">
+              <Link href="/owners">
                 <Button size="lg" className="bg-gradient-to-r from-teal-500 to-teal-400 hover:from-teal-400 hover:to-teal-300 text-white px-8 text-base rounded-xl h-12 shadow-lg shadow-teal-500/20">
                   {isArabic ? "سجّل عقارك" : "List Your Property"}
                   <ArrowRight className={`h-4 w-4 ms-2 ${isArabic ? "rotate-180" : ""}`} />

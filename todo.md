@@ -177,3 +177,16 @@
 - [x] Replace cropped icon + CSS text with full official logo image for clean professional look
 - [x] Create light-text variant for dark backgrounds (navbar, footer)
 - [x] Create dark-text variant for light backgrounds (login pages)
+
+## Full Project Audit
+- [x] Audit backend: schema, routers, db queries, error handling, security — CLEAN (0 TS errors, 69/69 tests pass)
+- [x] Audit frontend: pages, components, routing, translations, responsive design
+- [x] Audit browser: visual testing, console errors, network failures — CLEAN (0 console errors, 0 API failures)
+- [x] Apply all identified fixes in a single batch:
+  - [x] FIX: Contact page hardcoded phone (+966 50 000 0000) and email (info@cobnb.com.sa) → now fetched from settings API
+  - [x] FIX: Contact page phone/email now clickable (tel: and mailto: links)
+  - [x] FIX: Footer email now clickable mailto link
+  - [x] FIX: Jeddah and Madinah city hero images used private expiring URLs → re-uploaded to permanent S3 CDN
+  - [x] FIX: Broken /for-owners links in AccountDashboard and CoBnBPlus → corrected to /owners
+  - [x] FIX: Added SEO meta tags to 4 public pages missing them (Booking, ForOwners, Privacy, Terms)
+- [x] Verify all fixes with tests — 69/69 tests pass, 0 TypeScript errors

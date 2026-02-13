@@ -15,6 +15,9 @@ export default function Contact() {
   const { t, isArabic } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", type: "general", message: "" });
+  const { data: settings } = trpc.settings.getMultiple.useQuery({ keys: ["site_phone", "site_email"] });
+  const sitePhone = settings?.site_phone || "+966 50 446 6528";
+  const siteEmail = settings?.site_email || "info@cobnb.sa";
 
   const submit = trpc.inquiries.create.useMutation({
     onSuccess: () => { setSubmitted(true); toast.success(isArabic ? "تم إرسال رسالتك بنجاح" : "Your message has been sent successfully"); },
@@ -48,7 +51,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#0B1E2D]">{isArabic ? "البريد الإلكتروني" : "Email"}</h3>
-                    <p className="text-sm text-muted-foreground">info@cobnb.com.sa</p>
+                    <a href={`mailto:${siteEmail}`} className="text-sm text-muted-foreground hover:text-[#3ECFC0] transition-colors">{siteEmail}</a>
                   </div>
                 </CardContent>
               </Card>
@@ -59,7 +62,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-[#0B1E2D]">{isArabic ? "الهاتف" : "Phone"}</h3>
-                    <p className="text-sm text-muted-foreground" dir="ltr">+966 50 000 0000</p>
+                    <a href={`tel:${sitePhone}`} className="text-sm text-muted-foreground hover:text-[#3ECFC0] transition-colors" dir="ltr">{sitePhone}</a>
                   </div>
                 </CardContent>
               </Card>

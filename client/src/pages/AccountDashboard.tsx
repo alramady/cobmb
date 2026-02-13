@@ -284,7 +284,7 @@ export default function AccountDashboard() {
                   </Card>
                 </Link>
                 {isOwner && (
-                  <Link href="/for-owners">
+                  <Link href="/owners">
                     <Card className="border-0 shadow-sm hover:shadow-md transition-shadow cursor-pointer group">
                       <CardContent className="p-5 flex items-center gap-4">
                         <div className="w-12 h-12 rounded-xl bg-[#C9A96E]/10 flex items-center justify-center group-hover:bg-[#C9A96E]/20 transition-colors">

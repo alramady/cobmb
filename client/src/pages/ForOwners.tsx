@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
+import SEO from "@/components/SEO";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -54,6 +55,7 @@ export default function ForOwners() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "لملاك العقارات" : "For Property Owners"} description={isArabic ? "حقق أقصى عائد من عقارك مع خبراء الإيجار القصير" : "Maximize your property revenue with short-term rental experts"} url="/owners" />
       <section className="relative py-24 bg-[#0B1E2D] overflow-hidden">
         <div className="absolute inset-0 opacity-20"><div className="absolute top-20 left-20 w-96 h-96 bg-[#C9A96E] rounded-full blur-[150px]" /></div>
         <div className="container relative z-10">

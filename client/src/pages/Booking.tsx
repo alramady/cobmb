@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useClientAuth } from "@/hooks/useClientAuth";
 import PageLayout from "@/components/PageLayout";
+import SEO from "@/components/SEO";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,6 +34,7 @@ export default function Booking() {
   if (!isAuthenticated) {
     return (
       <PageLayout>
+        <SEO title={isArabic ? "حجز" : "Booking"} description={isArabic ? "احجز إقامتك في أفضل الشقق المفروشة في السعودية" : "Book your stay at the best furnished apartments in Saudi Arabia"} url="/booking" />
         <div className="py-20 text-center">
           <LogIn className="h-16 w-16 text-[#3ECFC0] mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-[#0B1E2D] mb-4">{isArabic ? "سجل الدخول للحجز" : "Sign In to Book"}</h2>
@@ -47,6 +49,7 @@ export default function Booking() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "حجز" : "Booking"} description={isArabic ? "احجز إقامتك في أفضل الشقق المفروشة في السعودية" : "Book your stay at the best furnished apartments in Saudi Arabia"} url="/booking" />
       <section className="py-16 bg-[#0B1E2D]">
         <div className="container">
           <h1 className="text-4xl font-bold text-white mb-4">{isArabic ? "حجز" : "Booking"}</h1>

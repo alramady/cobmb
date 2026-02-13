@@ -1,11 +1,13 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
+import SEO from "@/components/SEO";
 
 export default function Privacy() {
   const { isArabic } = useLanguage();
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "سياسة الخصوصية" : "Privacy Policy"} description={isArabic ? "سياسة الخصوصية لموقع كوبي إن بي" : "CoBnB KSA Privacy Policy"} url="/privacy" />
       <section className="py-16 bg-[#0B1E2D]">
         <div className="container"><h1 className="text-4xl font-bold text-white">{isArabic ? "سياسة الخصوصية" : "Privacy Policy"}</h1></div>
       </section>
