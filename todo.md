@@ -12,7 +12,7 @@
 - [x] SEO with react-helmet-async (per-page meta tags)
 - [x] Environment variables configured (VITE_APP_TITLE, ADMIN_*, etc.)
 - [x] Database schema pushed with all 17 tables
-- [x] Database seeded with production data (3 cities, 70 neighborhoods, 12 properties, 6 blog posts)
+- [x] Database seeded with production data (3 cities, 70 neighborhoods, 12 properties, 10 blog posts)
 
 ## Public Pages (20+ pages)
 - [x] Homepage with hero video, featured properties, city cards, stats, partner logos
@@ -134,3 +134,15 @@
 - [x] Add real team member profiles with photos
 - [x] Verify WhatsApp button and contact info display correctly
 - [x] Domain connection guidance for cobnb.vip
+
+## Social Media, Team Photos & Blog Content
+- [x] Update social media handles to CoBnB KSA accounts
+- [x] Generate realistic professional team headshots (5 members)
+- [x] Upload new team photos to S3 and update database
+- [x] Write full-length content for 6 existing blog posts (Vision 2030, Riyadh Neighborhoods, Jeddah Guide, Short-Term Rentals Rise, Madinah Spiritual Journey, Maximize Revenue)
+- [x] Create 4 new blog posts (Desert Glamping, Entertainment Revolution, NEOM & Red Sea, Saudi Hospitality)
+- [x] Generate 10 featured images for all blog posts
+- [x] Upload all blog images to S3 CDN
+- [x] Update/insert all 10 blog posts in database with full content, excerpts, SEO metadata, and featured images
+- [x] Verify all 10 blog posts display correctly on website with images and full content
+- [x] All 69 tests still passing after blog updates
