@@ -169,3 +169,6 @@
 - [x] Process and upload logo images to S3 CDN
 - [x] Update CoBnBLogo component to use official images
 - [x] Verify logo displays correctly across all pages (navbar, footer, login, signup, admin)
+
+## Logo Size Fix
+- [x] Fix logo building icon too small — enlarged icon (48px md, 72px lg) and rebalanced text proportions

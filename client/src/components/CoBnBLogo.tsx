@@ -17,10 +17,11 @@ export default function CoBnBLogo({
   variant = "light",
   className = "",
 }: CoBnBLogoProps) {
+  // Icon aspect ratio is ~0.71 (w/h)
   const sizes = {
-    sm: { iconH: 32, nameSize: "text-lg", tagSize: "text-[7px]", gap: "gap-2" },
-    md: { iconH: 40, nameSize: "text-xl", tagSize: "text-[8px]", gap: "gap-2.5" },
-    lg: { iconH: 56, nameSize: "text-3xl", tagSize: "text-[10px]", gap: "gap-3" },
+    sm: { iconH: 40, nameSize: "text-lg", tagSize: "text-[7px]", gap: "gap-2" },
+    md: { iconH: 48, nameSize: "text-2xl", tagSize: "text-[9px]", gap: "gap-2.5" },
+    lg: { iconH: 72, nameSize: "text-4xl", tagSize: "text-xs", gap: "gap-3" },
   };
   const s = sizes[size];
   const isLight = variant === "light";
@@ -29,16 +30,7 @@ export default function CoBnBLogo({
 
   return (
     <div className={`flex items-center ${s.gap} ${className}`}>
-      {/* Official CoBnB building icon */}
-      <img
-        src={ICON_URL}
-        alt="CoBnB"
-        className="shrink-0 object-contain"
-        style={{ height: s.iconH }}
-        draggable={false}
-      />
-
-      {/* Text */}
+      {/* Text on the left (RTL layout puts it visually on the right) */}
       {showText && (
         <div className="flex flex-col leading-none">
           <span
@@ -58,6 +50,15 @@ export default function CoBnBLogo({
           </span>
         </div>
       )}
+
+      {/* Official CoBnB building icon */}
+      <img
+        src={ICON_URL}
+        alt="CoBnB"
+        className="shrink-0 object-contain"
+        style={{ height: s.iconH }}
+        draggable={false}
+      />
     </div>
   );
 }
