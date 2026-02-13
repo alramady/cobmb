@@ -125,3 +125,12 @@
 - [x] Upload photos to S3 and update database image URLs
 - [x] Verify CoBnB+ page displays real photos
 - [x] Export ZIP and update GitHub
+
+## Site Settings & Team Members
+- [x] Populate site_whatsapp setting
+- [x] Populate site_phone setting
+- [x] Populate site_email setting
+- [x] Populate social media URLs (Instagram, Twitter/X, TikTok, Facebook, LinkedIn, YouTube)
+- [x] Add real team member profiles with photos
+- [x] Verify WhatsApp button and contact info display correctly
+- [x] Domain connection guidance for cobnb.vip
