@@ -406,7 +406,10 @@ export const appRouter = router({
     }),
 
     settings: router({
-      get: adminProcedure.input(z.object({ key: z.string() })).query(({ input }) => db.getSetting(input.key)),
+      get: adminProcedure.input(z.object({ key: z.string() })).query(async ({ input }) => {
+        const value = await db.getSetting(input.key);
+        return value ?? null;
+      }),
       getAll: adminProcedure.query(async () => {
         const keys = [
           "hero_video_url", "hero_poster_url", "hero_title_en", "hero_title_ar",
@@ -443,7 +446,10 @@ export const appRouter = router({
       const posterUrl = await db.getSetting("hero_poster_url");
       return { videoUrl, posterUrl };
     }),
-    get: publicProcedure.input(z.object({ key: z.string() })).query(({ input }) => db.getSetting(input.key)),
+    get: publicProcedure.input(z.object({ key: z.string() })).query(async ({ input }) => {
+      const value = await db.getSetting(input.key);
+      return value ?? null;
+    }),
     getMultiple: publicProcedure.input(z.object({ keys: z.array(z.string()) })).query(async ({ input }) => {
       const results: Record<string, string> = {};
       for (const key of input.keys) {

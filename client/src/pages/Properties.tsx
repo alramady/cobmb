@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -34,6 +35,7 @@ export default function Properties() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "العقارات" : "Properties"} description={isArabic ? "تصفح الشقق الفندقية والإيجارات قصيرة المدى في المملكة العربية السعودية." : "Browse premium serviced apartments and short-term rentals across Saudi Arabia."} url="/properties" />
       {/* Hero */}
       <section className="py-16 bg-[#0B1E2D]">
         <div className="container">

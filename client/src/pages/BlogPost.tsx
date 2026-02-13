@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { Link, useParams } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
@@ -24,6 +25,7 @@ export default function BlogPost() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? post.titleAr : post.titleEn} description={(isArabic ? post.excerptAr : post.excerptEn)?.slice(0, 160) || ""} url={"/blog/" + post.slug} />
       <article className="py-12 bg-white">
         <div className="container max-w-4xl">
           <Link href="/blog" className="text-sm text-[#3ECFC0] hover:underline flex items-center gap-1 mb-6">

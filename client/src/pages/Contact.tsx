@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
@@ -27,6 +28,7 @@ export default function Contact() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "اتصل بنا" : "Contact Us"} description={isArabic ? "تواصل مع كوبي إن بي للاستفسار عن إدارة العقارات وفرص الشراكة." : "Get in touch with CoBnB KSA for property management inquiries and partnership opportunities."} url="/contact" />
       <section className="py-16 bg-[#0B1E2D]">
         <div className="container">
           <h1 className="text-4xl font-bold text-white mb-4">{t("contact.title")}</h1>

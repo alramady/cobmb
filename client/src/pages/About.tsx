@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
 import { trpc } from "@/lib/trpc";
@@ -17,6 +18,7 @@ export default function About() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "من نحن" : "About Us"} description={isArabic ? "تعرف على كوبي إن بي - إدارة الإيجارات قصيرة المدى في السعودية." : "Learn about CoBnB KSA - premium short-term rental management in Saudi Arabia."} url="/about" />
       {/* Hero */}
       <section className="relative py-24 bg-[#0B1E2D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">

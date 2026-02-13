@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -26,6 +27,7 @@ export default function Blog() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "المدونة" : "Blog"} description={isArabic ? "رؤى حول السياحة السعودية والاستثمار العقاري وإدارة الإيجارات قصيرة المدى." : "Insights on Saudi tourism, property investment, and short-term rental management."} url="/blog" />
       <section className="py-16 bg-[#0B1E2D]">
         <div className="container">
           <h1 className="text-4xl font-bold text-white mb-4">{t("blog.title")}</h1>

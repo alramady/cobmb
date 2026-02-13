@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { useState } from "react";
 import { Link, useParams } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -47,6 +48,7 @@ export default function PropertyDetail() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? property.titleAr : property.titleEn} description={(isArabic ? property.descriptionAr : property.descriptionEn)?.slice(0, 160) || ""} url={"/property/" + property.id} />
       {/* Gallery */}
       <section className="bg-black">
         <div className="relative max-w-6xl mx-auto">

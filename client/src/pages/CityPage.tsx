@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { Link, useParams } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
@@ -27,6 +28,7 @@ export default function CityPage() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? city.nameAr : city.nameEn} description={(isArabic ? city.descriptionAr : city.descriptionEn)?.slice(0, 160) || ""} url={"/city/" + city.slug} />
       {/* Hero */}
       <section className="relative py-24 bg-[#0B1E2D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">

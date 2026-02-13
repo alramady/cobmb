@@ -89,3 +89,32 @@
 - [ ] Client favorites functionality
 - [ ] Push notifications
 - [ ] Mobile app (iOS/Android)
+
+## Audit
+- [x] Comprehensive website audit (UI/UX, functionality, SEO, accessibility, performance, code quality)
+
+## Export & GitHub
+- [x] Export project as ZIP file
+- [x] Push latest code to GitHub (alramady/cobmb)
+
+## Khalid's Fixes Integration (Round 2)
+- [x] Merge Navbar.tsx — add CoBnB+ link
+- [x] Merge Home.tsx — dynamic partners sections (press, client, OTA)
+- [x] Merge BlogTab.tsx — RichTextEditor for blog content
+- [x] Add new RichTextEditor.tsx component
+- [x] Install TipTap packages
+- [x] Add SEO component to 12 missing pages (About, Services, Properties, PropertyDetail, Blog, BlogPost, Contact, CityPage, NeighborhoodPage, ForOwners, Terms, Privacy)
+- [x] Download and upload official CoBnB logos to S3
+- [x] Update CoBnBLogo.tsx to use official logo image
+- [x] Update Footer.tsx to use footer logo with tagline
+- [x] Test all changes compile and run correctly
+- [ ] Export final ZIP and update GitHub
+
+## CoBnB+ Page Redesign
+- [x] Redesign CoBnB+ page to match Malaysia reference (dark luxury theme)
+- [x] Hero section with luxury interior image carousel
+- [x] L'OCCITANE premium amenities partner section
+- [x] "What is CoBnB+?" explanation section
+- [x] 4 differentiator cards (Designer-Furnished, Luxury Comfort, Curated Support, Elevated Amenities)
+- [x] KSA property listings section (from database)
+- [x] Bilingual Arabic/English support maintained

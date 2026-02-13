@@ -19,6 +19,7 @@ export default function Navbar() {
     { href: "/about", label: t("nav.about") },
     { href: "/services", label: t("nav.services") },
     { href: "/properties", label: t("nav.properties") },
+    { href: "/cobnb-plus", label: "CoBnB+" },
     { href: "/owners", label: t("nav.owners") },
     { href: "/blog", label: t("nav.blog") },
     { href: "/contact", label: t("nav.contact") },

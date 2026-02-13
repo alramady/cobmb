@@ -391,23 +391,118 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partners & Press Sections */}
+      <PartnersShowcase isArabic={isArabic} />
+
       {/* OTA Partners */}
-      <section className="py-12 bg-white border-t">
-        <div className="container">
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-4">
-              {isArabic ? "شركاء التوزيع عبر منصات الحجز العالمية" : "Distribution Partners Across Global OTA Platforms"}
+      <OTAPartners isArabic={isArabic} />
+    </PageLayout>
+  );
+}
+
+// ─── Partners Showcase (Press + Clients) ─────────────────────────────
+function PartnersShowcase({ isArabic }: { isArabic: boolean }) {
+  const { data: pressPartners } = trpc.partners.byCategory.useQuery({ category: "press" });
+  const { data: clientPartners } = trpc.partners.byCategory.useQuery({ category: "client" });
+
+  const hasPress = pressPartners && pressPartners.length > 0;
+  const hasClients = clientPartners && clientPartners.length > 0;
+
+  if (!hasPress && !hasClients) return null;
+
+  return (
+    <>
+      {/* Press / Honorable Mentions */}
+      {hasPress && (
+        <section className="py-16 bg-slate-50 border-t overflow-hidden">
+          <div className="container mb-8 text-center">
+            <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">
+              {isArabic ? "إشادات مشرّفة" : "Honorable Mentions"}
             </p>
-            <div className="flex items-center justify-center gap-8 flex-wrap">
-              {["Airbnb", "Booking.com", "Agoda"].map((name) => (
-                <div key={name} className="px-6 py-3 border border-gray-200 rounded-xl text-gray-400 font-semibold text-lg">
-                  {name}
+            <h3 className="text-xl font-bold text-[#0B1E2D]">
+              {isArabic ? "كما ظهرنا في" : "As Featured In"}
+            </h3>
+          </div>
+          <div className="relative">
+            <div className="flex animate-marquee gap-12 items-center">
+              {[...pressPartners, ...pressPartners].map((p: any, i: number) => (
+                <div key={`${p.id}-${i}`} className="flex-shrink-0 px-4">
+                  {p.logo ? (
+                    <img src={p.logo} alt={p.nameEn} className="h-10 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300" />
+                  ) : (
+                    <span className="text-slate-400 font-semibold text-sm whitespace-nowrap">{isArabic ? p.nameAr : p.nameEn}</span>
+                  )}
                 </div>
               ))}
             </div>
           </div>
+          <style>{`
+            @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+            .animate-marquee { animation: marquee 30s linear infinite; width: max-content; }
+            .animate-marquee:hover { animation-play-state: paused; }
+          `}</style>
+        </section>
+      )}
+
+      {/* Client Partners */}
+      {hasClients && (
+        <section className="py-16 bg-white border-t">
+          <div className="container text-center">
+            <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">
+              {isArabic ? "شراكات موثوقة" : "Trusted Partnerships"}
+            </p>
+            <h3 className="text-xl font-bold text-[#0B1E2D] mb-8">
+              {isArabic ? "نعمل مع أفضل العملاء والشركاء" : "Working With the Best Clients & Partners"}
+            </h3>
+            <div className="flex flex-wrap items-center justify-center gap-8">
+              {clientPartners.map((p: any) => (
+                <div key={p.id} className="group">
+                  {p.logo ? (
+                    <img src={p.logo} alt={p.nameEn} className="h-12 object-contain grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100 transition-all duration-300" />
+                  ) : (
+                    <div className="px-6 py-3 border border-gray-200 rounded-xl text-gray-400 font-semibold text-sm group-hover:text-[#0B1E2D] group-hover:border-teal-300 transition-colors">
+                      {isArabic ? p.nameAr : p.nameEn}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
+  );
+}
+
+// ─── OTA Partners (dynamic from DB with fallback) ────────────────────
+function OTAPartners({ isArabic }: { isArabic: boolean }) {
+  const { data: otaPartners } = trpc.partners.byCategory.useQuery({ category: "ota" });
+  const names = otaPartners && otaPartners.length > 0
+    ? otaPartners.map((p: any) => ({ name: isArabic ? p.nameAr : p.nameEn, logo: p.logo }))
+    : [{ name: "Airbnb", logo: null }, { name: "Booking.com", logo: null }, { name: "Agoda", logo: null }];
+
+  return (
+    <section className="py-12 bg-white border-t">
+      <div className="container">
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground mb-4">
+            {isArabic ? "شركاء التوزيع عبر منصات الحجز العالمية" : "Distribution Partners Across Global OTA Platforms"}
+          </p>
+          <div className="flex items-center justify-center gap-8 flex-wrap">
+            {names.map((item: any, i: number) => (
+              <div key={i} className="group">
+                {item.logo ? (
+                  <img src={item.logo} alt={item.name} className="h-10 object-contain grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all" />
+                ) : (
+                  <div className="px-6 py-3 border border-gray-200 rounded-xl text-gray-400 font-semibold text-lg">
+                    {item.name}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-      </section>
-    </PageLayout>
+      </div>
+    </section>
   );
 }

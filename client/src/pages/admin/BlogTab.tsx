@@ -3,6 +3,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import RichTextEditor from "@/components/RichTextEditor";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
@@ -198,8 +199,8 @@ function BlogDialog({ isArabic, post, onClose, onSuccess }: {
             <div><Label>Excerpt (AR)</Label><Textarea value={form.excerptAr} onChange={(e) => setForm({ ...form, excerptAr: e.target.value })} rows={2} dir="rtl" /></div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div><Label>Content (EN)</Label><Textarea value={form.contentEn} onChange={(e) => setForm({ ...form, contentEn: e.target.value })} rows={8} placeholder="Supports Markdown..." /></div>
-            <div><Label>Content (AR)</Label><Textarea value={form.contentAr} onChange={(e) => setForm({ ...form, contentAr: e.target.value })} rows={8} dir="rtl" /></div>
+            <div><Label>Content (EN)</Label><RichTextEditor value={form.contentEn} onChange={(v) => setForm({ ...form, contentEn: v })} placeholder="Write your blog post content..." /></div>
+            <div><Label>Content (AR)</Label><RichTextEditor value={form.contentAr} onChange={(v) => setForm({ ...form, contentAr: v })} placeholder="اكتب محتوى المقال..." dir="rtl" /></div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>

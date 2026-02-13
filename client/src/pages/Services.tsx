@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
@@ -92,6 +93,7 @@ export default function Services() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? "خدماتنا" : "Our Services"} description={isArabic ? "إدارة عقارات متكاملة وخدمات ضيوف وتحسين العوائد للإيجارات قصيرة المدى." : "Full-service property management, guest services, and revenue optimization for short-term rentals."} url="/services" />
       {/* Hero */}
       <section className="relative py-24 bg-[#0B1E2D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">

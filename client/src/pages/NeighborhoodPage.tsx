@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import { Link, useParams } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageLayout from "@/components/PageLayout";
@@ -37,6 +38,7 @@ export default function NeighborhoodPage() {
 
   return (
     <PageLayout>
+      <SEO title={isArabic ? nhData.nameAr : nhData.nameEn} description={(isArabic ? nhData.descriptionAr : nhData.descriptionEn)?.slice(0, 160) || ""} url={"/neighborhood/" + nhData.slug} />
       {/* Hero */}
       <section className="relative py-24 bg-[#0B1E2D] overflow-hidden min-h-[320px]">
         {nhData.heroImage && <div className="absolute inset-0"><img src={nhData.heroImage} alt="" className="w-full h-full object-cover opacity-60" /></div>}
