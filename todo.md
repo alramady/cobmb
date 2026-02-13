@@ -172,3 +172,8 @@
 
 ## Logo Size Fix
 - [x] Fix logo building icon too small — enlarged icon (48px md, 72px lg) and rebalanced text proportions
+
+## Logo Fix v2
+- [x] Replace cropped icon + CSS text with full official logo image for clean professional look
+- [x] Create light-text variant for dark backgrounds (navbar, footer)
+- [x] Create dark-text variant for light backgrounds (login pages)
